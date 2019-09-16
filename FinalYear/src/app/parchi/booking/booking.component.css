@@ -1,0 +1,18 @@
+.from{
+    margin-top: 3%;
+    margin-left: 1%;
+    float: left;
+}
+.to{
+    margin-top: 3%;
+    margin-left: 1%;
+    float: left;
+}
+.bttn{
+    border-width: 5px;
+    font-size: 2rem;
+    border-radius: 3.25rem;
+}
+form.group{
+    margin-left: 10%
+}

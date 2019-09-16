@@ -1,0 +1,22 @@
+.Contact{
+    background-color: aqua;
+}
+.services{
+    background-color: aqua;
+}
+.id{
+   margin-left: 650px;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: lightblue;
+}
+.button
+{
+    width: 7%;
+    height: 40px;
+    margin:  2px;
+    padding: 4px;
+}
+.text-spacing-sm {
+    letter-spacing: 0.02em;
+}

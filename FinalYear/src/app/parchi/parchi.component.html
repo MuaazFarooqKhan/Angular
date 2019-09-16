@@ -1,0 +1,344 @@
+<!-- <!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body class="body">
+    <div>
+        <div class="container">
+            <nav class="bar navbar navbar-expand-sm navbar-light bg-info">
+                <span class="glyphicon glyphicon-user"></span>
+                <marquee align="{mid}" direction="left" scrollamount="10" behavior="altenate" scrolldelay="50" loop="" bgcolor="white" width="50%" height="50px" onmouseover="this.stop()" onmouseout="this.start()" class="firstmarquee">
+                    <p class="navtext">
+                        You are the admin of the company. You have the authority of each of every thing like add new bt, new station or can add new busses.
+                    </p>
+                </marquee>
+                <marquee direction="up" scrollamount="" behavior="altenate" scrolldelay="50" loop="" bgcolor="white" width="50%" height="50px" onmouseover="this.stop()" onmouseout="this.start()" class="secmarquee">
+                    <img src="assets/image/1.jpg">
+                    <img src="assets/image/3.png">
+                    <img src="assets/image/5.png">
+                </marquee>
+            </nav>
+        </div>
+      <button class="btn btn-warning">Glyphicons<span class="glyphicon glyphicon-login"></span></button> 
+        <form autocomplete="on">
+             Start Autosuggest textbox for hotels/tours 
+            <div class="DA">
+                <div class="from">
+                    <label class="fromlabel">
+                        From City
+                    </label>
+                    <select>
+                        <option value="" class="" selected="selected">--Select Departure--</option>
+                        <option label="LAHORE THOKAR" value="number:1">LAHORE THOKAR</option>
+                        <option label="RAWALPINDI" value="number:22">RAWALPINDI</option>
+                        <option label="MULTAN" value="number:5">MULTAN</option>
+                        <option label="FAISALABAD" value="number:16">FAISALABAD</option>
+                        <option label="KARACHI" value="number:13">KARACHI</option>
+                        <option label="PESHAWAR" value="number:25">PESHAWAR</option>
+                        <option disabled="" label="----------------------" value="number:0">----------------------</option>
+                    </select>
+                </div>
+
+                <div class="to">
+                    <label class="tolabel">
+                        To City
+                    </label>
+                    <select>
+                        <option value="" class="" selected="selected">--Select Arrival--</option>
+                        <option label="FAISALABAD" value="number:16">FAISALABAD</option>
+                        <option label="RAWALPINDI" value="number:22" selected="selected">RAWALPINDI</option>
+                        <option label="SARGODHA" value="number:21">SARGODHA</option>
+                        <option disabled="" label="----------------------" value="number:0">----------------------</option>
+                    </select>
+                </div>
+            </div>
+          <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> 
+            <ul class="nav nav-tabs" id="nav">
+                <li class="nav-item">
+                    <a href="#one" data-toggle="tab" class="nav-link active">Station</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#two" data-toggle="tab" class="nav-link">BT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#three" data-toggle="tab" class="nav-link">Bus Information</a>
+                </li>
+            </ul>
+
+            <br>
+
+            <div class="tab-content">
+
+                <div class=" tab-pane active" id="one">
+                    <div>
+                        <pre class="stationpara">
+                            <h5 class="text-justify">
+                                From here Admin can add new station or can delete station.
+                                Once you delete station it will be permenantly deleted.
+                            </h5>
+                        </pre>
+                        <div class="buttonroute tab-pane">
+
+                            <input placeholder="Station" type="text">
+                            <button class="btn btn-primary">Add Station</button>
+                            <br>
+                            <input placeholder="DeleteStation" type="text">
+                            <button class="btn btn-primary">Delete Station</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <li class=" tab-pane" id="two">
+                    <pre class="delbtclass">
+                        <h5 class="text-justify" style="color: #e7e7e7">
+                            From here Admin can add new BT or can delete Bt.
+                            Once you delete Bt it will be permenantly deleted.
+                        </h5>
+                    </pre>
+                    <a [routerLink]="['/creatbt']">
+                        <button class="btbtton btn btn-primary">Create BT</button>
+                    </a>
+                    <a href="#p" data-toggle="collapse">
+                        <button class="delbtbtton btn btn-primary">Delete BT</button>
+                    </a>
+                    <div class="collapse del" id="p">
+                        <div class="container">
+                            <div class="jum jumbotron">
+                                <form [formGroup]='signupForm' (ngSubmit)="PostData(signupForm)">
+                                    <div class="form-group">
+                                        <input formControlName='firsname' placeholder="First Name" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input formControlName='lastname' placeholder="Email" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input formControlName='lastname' placeholder="Id" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="SIGNUP" class="btn float-right login_btn">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </li>
+                <li class="tab-pane" id="three">
+                    <a href="#addbus" data-toggle="collapse">
+                        <button class="buttonsche btn btn-primary">Add Bus</button>
+                    </a>
+                    <div class="collapse" id="addbus">
+                        <div class="jumbotron">
+                            this is jumbotron
+                        </div>
+                    </div>
+                    <a href="#deletebuss" data-toggle="collapse">
+                        <button class="buttonsch btn btn-primary">Delete Bus</button>
+                    </a>
+                    <div class="collapse" id="deletebuss">
+                        <div class="jumbotron">
+                            this is jumbotron
+                        </div>
+                    </div>
+                    <a href="#addschedule" data-toggle="collapse">
+                        <button class="buttonsch btn btn-primary">Add Schedule</button>
+                    </a>
+                    <div class="collapse" id="addschedule">
+                        <div class="jumbotron">
+                            this is jumbotron
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </li>
+
+            </div>
+            <div>
+                <div>
+
+                    <button id="btnsearchschedule" class="button button-block button-secondary get-schedule-main-button" type="button" data-ng-click="GetSchedule();">Get Schedule</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Light Bootstrap Dashboard by Creative Tim</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+ 
+</head>
+<body class="body">
+<div class="wrapper">
+    <div class="sidebar" data-color="green" data-image="assets/images/sidebar-5.jpg">
+        <img class="sidebar" height="500px" src="assets/image/sidebar-5.jpg" alt="First slide">
+        <!-- <fa name="cog" animation="spin"></fa> -->
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+    
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a [routerLink]="['parchi']" class="simple-text">
+                    Online Ticket System
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="active">
+                    <a [routerLink]="['booking']">  
+                        <button class="btn btn-dark" style=" border-width: 0px; color: #888888; border-color: #888888; padding: 0px 0px; background-color: transparent; font-weight: 400; filter: alpha(opacity=80);">
+                            <i class="fas fa-clock"></i>
+                            <p >Booking Ticket</p>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav">
+                    <li class="active">
+                        <a [routerLink]="['cancel']">  
+                            <button class="btn btn-dark" style=" border-width: 0px; color: #888888; border-color: #888888; padding: 0px 0px; background-color: transparent; font-weight: 400; filter: alpha(opacity=80);">
+                                <i class="fas fa-bus"></i>
+                                <p >Cancel Ticket</p>
+                            </button>
+                        </a>
+                    </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> -->
+                    <i class="fas fa-users text-danger" style="font-size: 30px"><a class="navbar-brand" href="#">Tickets</a></i>
+                    <div class="head">
+                        <p>Welcome to {{title}}<br>
+                        {{dob|date:"short"|uppercase}}
+                        {{dob|date:"E"|uppercase}}</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+
+            },{
+                type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script>
+
+</html>
+

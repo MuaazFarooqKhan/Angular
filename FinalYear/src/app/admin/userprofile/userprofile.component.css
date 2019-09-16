@@ -1,0 +1,10 @@
+.fname{
+    margin-right: 2%;
+    margin-bottom: 2%;
+    float: left;
+    height: 40px;
+    padding: 15px;
+}
+.body{
+    height: auto;
+}

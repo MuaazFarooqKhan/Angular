@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="col-md-11">
+        <div class="card">
+            <div>
+                <div class="header">
+                    <form>
+                        <!-- Start Autosuggest textbox for hotels/tours -->
+                        <div class="row" style="margin-top:1%; margin-left:20%">
+                            <div class="col-md-10" >
+                                <div class="card">
+                                    <div>
+                                        <div>
+                                            <label class="fromlabel" style="margin-top:3%; margin-left:2%; float: left;">
+                                                From City:-
+                                            </label>
+                                            <div class="from">
+                                                <select>
+                                                    <option value="" class="" selected="selected">--Select Departure--</option>
+                                                    <option label="LAHORE THOKAR" value="number:1">LAHORE THOKAR</option>
+                                                    <option label="RAWALPINDI" value="number:22">RAWALPINDI</option>
+                                                    <option label="MULTAN" value="number:5">MULTAN</option>
+                                                    <option label="FAISALABAD" value="number:16">FAISALABAD</option>
+                                                    <option label="KARACHI" value="number:13">KARACHI</option>
+                                                    <option label="PESHAWAR" value="number:25">PESHAWAR</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="tolabel" style="margin-top:3%; margin-left:15%; float: left;">
+                                                To City:-
+                                            </label>
+                                            <div class="to">
+                                                <select>
+                                                    <option value="" class="" selected="selected">--Select Departure--</option>
+                                                    <option label="SADIQABAD" value="number:7">SADIQABAD</option>
+                                                    <option label="SAHIWAL" value="number:2">SAHIWAL</option>
+                                                    <option label="SAKRAND" value="number:117">SAKRAND</option>
+                                                    <option label="SEHWAN " value="number:100">SEHWAN </option>
+                                                    <option label="SUKKUR" value="number:10">SUKKUR</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <mat-form-field style="margin-left:35%">
+                                            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <!-- <div style="margin-left:5%">
+                                <div style="float:left; padding-right:3%">
+                                    <label class="lab hidden-xs hidden-sm">
+                                        &nbsp;
+                                    </label>
+                                    <button class="btn btn-primary">Booking ticket</button>
+                                    <button id="btnsearchschedule" class="button button-block button-secondary get-schedule-main-button" type="button" data-ng-click="GetSchedule();">Get Schedule</button>
+                                </div>
+                                <div>
+                                    <label class="lab hidden-xs hidden-sm">
+                                        &nbsp;
+                                    </label>
+                                    <button class="btn btn-primary">Advance Booking ticket</button>
+                                </div>
+                            </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h4 class="title">Ticket Form</h4>
+                                    <form [formGroup]='signupForm' (ngSubmit)="PostData(signupForm)">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="margin-left: 10%">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" formControlName='Username' placeholder="Username">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>Phone no.</label>
+                                                    <input type="text" class="form-control" formControlName='phoneno' placeholder="Username">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="margin-left: 10%">
+                                                    <label>CNIC</label>
+                                                    <input type="text" class="form-control" formControlName='cnic' placeholder="Username">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <input type="email" class="form-control" formControlName='Email' placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="margin-left: 10%">
+                                                    <label for="exampleInputEmail1">Amount</label>
+                                                    <input type="email" class="form-control" formControlName='amount' placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">No. of Seats</label>
+                                                    <input type="email" class="form-control" formControlName='noofseats' placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group" style="margin-left: 10%">
+                                                    <label for="exampleInputEmail1">Seats No.</label>
+                                                    <input type="email" class="form-control" formControlName='seatsno' placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="bttn btn btn-dark btn-fill pull-right">Book</button>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        demo.initChartist();
+
+        $.notify({
+            icon: 'pe-7s-gift',
+            message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+
+        }, {
+            type: 'info',
+            timer: 4000
+        });
+
+    });
+</script>
+
+</html>
